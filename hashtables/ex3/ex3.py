@@ -3,9 +3,27 @@ def intersection(arrays):
     YOUR CODE HERE
     """
     # Your code here
+    numbers = {}
 
+    for array in arrays:
+        for number in array:
+            if number in numbers:
+                numbers[number] +=1
+            else:
+                numbers[number] = 1
+
+    length = len(arrays)
+
+    result = []
+
+    for number in numbers:
+        if numbers[number] == length:
+            result.append(number)
+        
+    # print(result)
     return result
 
+# if one array has the duplicates??
 
 if __name__ == "__main__":
     arrays = []
